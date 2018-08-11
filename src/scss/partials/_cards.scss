@@ -1,0 +1,312 @@
+.cards {
+  width: 100%;
+  //overflow-x: hidden;
+ // transition: 0.3s;
+  @media (min-width: 767px) {
+
+  }
+  @media (min-width: 1030px) {
+    max-width: 940px;
+  }
+  margin: 60px auto;
+
+  &--half-width {
+    @media (min-width: 767px) {
+      max-width: 560px;
+    }
+  }
+  &__card {
+    //transition: 0.5s;
+    //float: left;
+    width: 100%;
+    height: 150px;
+    background: rgba(255,255,255,0.7);
+    margin-bottom: 5px;
+    z-index: 22;
+    @media (min-width: 600px) {
+      width: calc(50% - 2.5px);
+      height: 250px;
+    }
+    @media (min-width: 767px) {
+      width: calc(25% - 5px);
+    }
+    @media (min-width: 1030px) {
+    //  width: calc(25% - 5px);
+    }
+
+
+
+    &--full{
+      width: 100%;
+      mix-blend-mode: overlay;
+    }
+
+    &--fat {
+      width: 100%;
+      mix-blend-mode: overlay;
+      transform: rotateX(0.01deg);
+      @media (min-width: 600px) {
+        width: 100%;
+      }
+      @media (min-width: 767px) {
+        width: calc(50% - 5px);
+      }
+    }
+
+
+    &--short{
+     height: 165px;
+    }
+
+
+    &__inputs {
+      height: auto;
+      &-container {
+        position: relative;
+        margin: 15px;
+      }
+      &-input {
+        width: 100%;
+        border: none;
+        background: transparent;
+        padding: 10px 5px 4px 0px;
+        border-bottom: 2px solid #666;
+        font-size: 18px;
+        box-shadow: none;
+        &:focus + label, &.active + label {
+          transform: translateY(-16px) scale(0.6);
+        }
+        &:focus {
+          border-bottom: 2px solid black;
+        }
+        &:invalid {
+          border-bottom: 3px solid red;
+        }
+      }
+      textarea {
+        font-size: 16px;
+      }
+      label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 18px;
+        cursor: text;
+        -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
+        transition: color .2s ease-out, -webkit-transform .2s ease-out;
+        transition: transform .2s ease-out, color .2s ease-out;
+        transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        text-align: initial;
+        transform: translateY(8px);
+      }
+      button {
+        width: 100%;
+        border: 0;
+        padding: 8px 4px;
+        font-size: 22px;
+        cursor: pointer;
+        transition: 0.3s;
+        color: #666;
+        font-weight: bold;
+        &:hover {
+          color: black;
+        }
+      }
+    }
+
+    &--tall {
+      display: none;
+      @media (min-width: 767px) {
+        height: 760px;
+        display: block;
+      }
+    }
+
+
+    &-sizer {
+      width: calc(50% - 2.5px);
+      @media (min-width: 600px) {
+        width: calc(50% - 2.5px);
+      }
+      @media (min-width: 767px) {
+        width: calc(5% - 5px);
+      }
+    }
+
+    &--content{
+      mix-blend-mode: unset;
+      padding: 0 20px;
+      overflow-y: scroll;
+      height: auto;
+
+      @media (min-width: 767px) {
+        height: 505px;
+      }
+
+      // TODO: Bem it
+    }
+    &-link {
+      color: #444;
+      font-weight: bold;
+      padding: 2px 2px;
+      //border: 1px solid transparent;
+      text-decoration: none;
+      font-size: 14px;
+      position: relative;
+      display: inline-block;
+      &:after{
+        content: '';
+        display: block;
+        height: 2px;
+        bottom: 3px;
+        left: 50%;
+        position: absolute;
+        width: 90%;
+        background: #444;
+        transform: translateX(-50%);
+        transition: 0.53s;
+      }
+      &:before {
+        content: '';
+        display: block;
+        height: 2px;
+        bottom: 3px;
+        left: 50%;
+        position: absolute;
+        width: 81%;
+        background: #444;
+        transform: translateX(-50%);
+        transition: 0.3s;
+        transition-timing-function: ease-in;
+      }
+      &:hover:before {
+        transform: translateX(-50%) translateY(6px);
+      }
+    }
+
+    &-title {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      color: black;
+      font-size: 2em;
+      @media (min-width: 767px) {
+        font-size: 3em;
+      }
+      &--big {
+        font-size: 3em;
+        @media (min-width: 500px) {
+          font-size: 4em;
+        }
+        @media (min-width: 767px) {
+          font-size: 3.7em;
+        }
+        @media (min-width: 1030px) {
+          font-size: 4.7em;
+        }
+      }
+    }
+
+    &-image {
+      mix-blend-mode: unset;
+
+      &:after {
+        content: '';
+        background-image: url(../img/aylin.jpg);
+        background-size: cover;
+        background-position: center;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+        left: 5px;
+        width: calc(100% - 10px);
+        bottom: 5px;
+        height: calc(100% - 10px);
+        top: 5px;
+        right: 5px;
+        position: absolute;
+      }
+    }
+    &-item {
+      perspective: 1000px;
+      background: transparent;
+      //transition: 0.3s;
+      z-index: 2;
+      //transform: scale(0);
+      transform: scale3d();
+
+
+
+      &-flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+        height: 100%;
+        background: rgba(255,255,255,.7);
+        will-change: transform;
+      }
+
+      &:hover {
+        mix-blend-mode: overlay;
+        //transform: scale(0.81);
+        .cards__card-item-flipper {
+          transform: rotateY(180deg) scale(0.81);
+        }
+        .cards__card-item-back-text {
+          transform: scale(1);
+        }
+      }
+
+      &-front, &-back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+      }
+      &-front {
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: darken;
+        left: 5px;
+        width: calc(100% - 10px);
+        bottom: 5px;
+        height: calc(100% - 10px);
+        top: 5px;
+        right: 5px;
+        position: absolute;
+        z-index: 2;
+        //transform: rotateY(0deg);
+        &--contain {
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+      &-back {
+        transform: rotateY(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100% - 10px);
+        width: calc(100% - 10px);
+        &-text {
+          transform: scale(0.01);
+          font-size: 32px;
+          font-weight: 800;
+          color: black;
+          a {
+            font-size: 16px;
+            display: block;
+          }
+        }
+      }
+    }
+
+  }
+}

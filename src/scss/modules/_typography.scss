@@ -1,3 +1,7 @@
+//$primary-font:  'Poppins', sans-serif;
+
+
+
 @font-face {
   font-family: 'Font-Name';
   src: url('../fonts/font-name.eot');
@@ -7,4 +11,10 @@
        url('../fonts/font-name.svg#font-name') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+
+
+
+strong {
+  font-weight: 900;
 }
