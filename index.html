@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>FastShell by @_Karamii</title>
+    <title>Aylin Erzurumluoğlu - Industrial Designer </title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -11,39 +11,62 @@
     <link href="//www.google-analytics.com" rel="dns-prefetch">
     <link href="//ajax.googleapis.com" rel="dns-prefetch">
     <link href="assets/css/style.min.css" rel="stylesheet">
+    <!--- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800" rel="stylesheet">
 
     <script src="assets/components/modernizr/modernizr.js"></script>
   </head>
   <body>
 
-    <header class="header" role="banner">
-      <div class="logo">
-        <a href="/">
-          <img src="assets/img/logo.png" alt="Logo">
-        </a>
+
+  <main class="content">
+    <div class="cards">
+      <div class="cards__card-sizer"></div>
+      <div class="cards__card cards__card--fat animated fadeIn ">
+        <h1 class="cards__card-title cards__card-title--big">Hi! I'm Aylin.</h1>
       </div>
-      <nav class="nav" role="navigation">
-        <ul>
-          <li>
-            <a href="/"></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+      <div class="cards__card cards__card--fat cards__card--tall cards__card-image flipInY animated" style="animation-delay: 850ms">
+      </div>
+      <a href="/portfolio" class="cards__card cards__card-item animated bounceIn" style="animation-delay: 450ms ">
+        <div class="cards__card-item-flipper">
+          <div class="cards__card-item-front cards__card-item-front--contain" style="background-image: url(/assets/img/home/portfolio.png)"></div>
+          <div class="cards__card-item-back"><span class="cards__card-item-back-text">My Work</span></div>
+        </div>
+      </a>
+        <a href="/about.html" class="cards__card cards__card-item animated bounceIn" style="animation-delay: 550ms">
+        <div class="cards__card-item-flipper">
+          <div class="cards__card-item-front cards__card-item-front--contain" style="background-image: url(/assets/img/home/about.png)"></div>
+          <div class="cards__card-item-back"><span class="cards__card-item-back-text">My Skills</span></div>
+        </div>
+        </a>
+      <a href="/portfolio" class="cards__card cards__card-item animated bounceIn" style="animation-delay: 650ms">
+        <div class="cards__card-item-flipper">
+          <div class="cards__card-item-front cards__card-item-front--contain" style="background-image: url(/assets/img/home/resume.png)"></div>
+          <div class="cards__card-item-back"><span class="cards__card-item-back-text">Download</span></div>
+        </div>
+      </a>
+      <a href="/contact.html" class="cards__card cards__card-item animated bounceIn" style="animation-delay: 750ms">
+        <div class="cards__card-item-flipper">
+          <div class="cards__card-item-front cards__card-item-front--contain" style="background-image: url(/assets/img/home/contact.png);"></div>
+          <div class="cards__card-item-back"><span class="cards__card-item-back-text">Let's Chat</span></div>
+        </div>
+      </a>
 
-    <main class="main" role="main">
 
-    </main>
+      <!---  Canvas have to be here for the mix blend mode... -->
+      <canvas id="canvas1" style="z-index: 0; position: absolute"></canvas>
+      <canvas id="canvas2" style="z-index: 1; position: absolute"></canvas>
+    </div>
+  </main>
 
-    <aside class="sidebar" role="complementary">
 
-    </aside>
 
-    <footer class="footer" role="contentinfo">
 
-    </footer>
+
 
     <script src="assets/components/jquery/jquery.min.js"></script>
+  <script type='text/javascript' src='https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.1.0/trianglify.min.js"></script>
     <script src="assets/js/scripts.min.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
