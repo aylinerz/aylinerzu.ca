@@ -1,7 +1,7 @@
 .cards {
   width: 100%;
   //overflow-x: hidden;
- // transition: 0.3s;
+  // transition: 0.3s;
   @media (min-width: 767px) {
 
   }
@@ -31,14 +31,20 @@
       width: calc(25% - 5px);
     }
     @media (min-width: 1030px) {
-    //  width: calc(25% - 5px);
+      //  width: calc(25% - 5px);
     }
 
 
 
-    &--full{
+
+    &--full {
       width: 100%;
       mix-blend-mode: overlay;
+      transform: rotateX(0.01deg);
+      @media (min-width: 767px) {
+        width: calc(100% - 5px);
+
+      }
     }
 
     &--fat {
@@ -51,16 +57,25 @@
       @media (min-width: 767px) {
         width: calc(50% - 5px);
       }
+
+      &-always {
+        width: calc(50% - 5px);
+      }
     }
 
 
     &--short{
-     height: 165px;
+      height: 165px;
+    }
+
+    &--shorter {
+      height: 105px;
     }
 
 
     &__inputs {
       height: auto;
+      mix-blend-mode: unset;
       &-container {
         position: relative;
         margin: 15px;
@@ -110,9 +125,21 @@
         transition: 0.3s;
         color: #666;
         font-weight: bold;
+        background: transparent;
         &:hover {
           color: black;
         }
+      }
+      &--mix {
+        //mix-blend-mode: overlay;
+      }
+    }
+
+    &--normal {
+      display: none;
+      @media (min-width: 767px) {
+        height: 505px;
+        display: block;
       }
     }
 
@@ -146,6 +173,10 @@
       }
 
       // TODO: Bem it
+
+      &-auto {
+        height: auto;
+      }
     }
     &-link {
       color: #444;
@@ -184,6 +215,13 @@
       &:hover:before {
         transform: translateX(-50%) translateY(6px);
       }
+      &--alt {
+        color: #444;
+        font-weight: bold;
+        &:before, &:after {
+          display: none;
+        }
+      }
     }
 
     &-title {
@@ -209,19 +247,55 @@
           font-size: 4.7em;
         }
       }
+      &--portfolio {
+        flex-wrap: wrap;
+        span {
+          position: relative;
+        }
+        @media (min-width: 400px) {
+          font-size: 2.5em;
+        }
+        @media (min-width: 600px) {
+          font-size: 3.6em;
+        }
+        @media (min-width: 767px) {
+          font-size: 3.7em;
+        }
+        @media (min-width: 1030px) {
+          font-size: 4.7em;
+        }
+        sub {
+          font-size: 80%;
+          position: absolute;
+          line-height: 1;
+          display: block;
+          word-break: normal;
+          width: 100%;
+          text-align: center;
+          bottom: -35px;
+          @media (min-width: 500px) {
+            font-size: 30%;
+            bottom: -15px;
+            width: auto;
+            right: 0;
+          }
+        }
+        &-single {
+          font-size: 2.5em;
+          justify-content: flex-start;
+          align-items: flex-end;
+          margin-left: 10px;
+        }
+      }
     }
 
     &-image {
       mix-blend-mode: unset;
-
       &:after {
         content: '';
         background-image: url(../img/aylin.jpg);
         background-size: cover;
         background-position: center;
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
         filter: FlipH;
         -ms-filter: "FlipH";
@@ -233,6 +307,60 @@
         right: 5px;
         position: absolute;
       }
+      &--portfolio-single {
+        display: block;
+        cursor: pointer;
+        @media (max-width: 767px) {
+          //display: block;
+          //height: auto;
+        }
+        &:after {
+          content: '';
+          display: none;
+        }
+      }
+      &--scarf{
+        &:after {
+          background-image: url(../img/portfolio/Scarf.jpg);
+          filter: none;
+          -ms-filter: "none";
+          transform: scaleX(1);
+          background-position: 15%;
+        }
+      }
+      img {
+        max-width: 100%;
+        padding: 5px;
+        display: block;
+        display: none;
+        @media (min-width: 767px) {
+          display: none;
+        }
+      }
+      &-single {
+        z-index:33;
+        background-image: url(../img/portfolio/Portf.jpg);
+        background-size: cover;
+        background-position: center;
+        left: 5px;
+        width: calc(100% - 10px);
+        bottom: 5px;
+        height: calc(100% - 10px);
+        top: 5px;
+        right: 5px;
+        position: absolute;
+      }
+    }
+
+    &-portfolio-item-name{
+      position: absolute;
+      background: rgba(0, 0, 0, 0.5);
+      left: -5px;
+      bottom: -5px;
+      padding: 3px 20px 0px;
+      color: #fff;
+      font-size: 15px;
+      letter-spacing: 1px;
     }
     &-item {
       perspective: 1000px;
@@ -253,8 +381,9 @@
         will-change: transform;
       }
 
-      &:hover {
-        mix-blend-mode: overlay;
+      &:hover,&:focus {
+        //mix-blend-mode: overlay;
+        mix-blend-mode: screen;
         //transform: scale(0.81);
         .cards__card-item-flipper {
           transform: rotateY(180deg) scale(0.81);
@@ -264,6 +393,9 @@
         }
       }
 
+      &--disabled {
+        cursor: default;
+      }
       &-front, &-back {
         backface-visibility: hidden;
         position: absolute;
@@ -307,6 +439,264 @@
         }
       }
     }
+    &--home {
+        mix-blend-mode: screen;
+      .cards__card-item-flipper {
+        will-change: unset;
+      }
+      .cards__card-item-back {
+        transform: none;
+      }
+      .cards__card-item-back-text {
+        transform: none;
+      }
+      &:hover {
+        .cards__card-item-flipper {
+          transform: scale(0.9);
+        }
+
+      }
+    }
 
   }
+
+  &.cards--grid {
+    display: grid;
+
+    grid-template-columns: auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: "Heading" "Slider" "Portfolio1" "Portfolio2" "Portfolio3" "Portfolio4";
+    @media (min-width: 767px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "Heading Heading Heading Heading" "Slider Slider Portfolio1 Portfolio2" "Slider Slider Portfolio3 Portfolio4";
+    }
+    grid-gap: 10px;
+
+    .cards__card {
+      position: relative;
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+
+    .card--heading {
+      grid-area: Heading;
+    }
+    .card--slider {
+      grid-area: Slider;
+      height: 100%;
+      padding: 5px;
+      display: none;
+      @media (min-width: 767px) {
+        display: block;
+      }
+    }
+
+
+    @for $i from 1 through 4 {
+      .card--portfolio-item-#{$i} {
+        grid-area: Portfolio#{$i};
+      }
+    }
+
+    .slick-list, .slick-track, .slick-slide > div {
+      height: 100%;
+    }
+
+    .slider__image {
+      background-size: cover;
+      height: 100%;
+      position: relative;
+      .caption {
+        position: absolute;
+        background: rgba(0,0,0,.5);
+        left: 0px;
+        bottom: 0px;
+        padding: 3px 20px 0;
+        color: #fff;
+        font-size: 15px;
+        letter-spacing: 1px;
+      }
+    }
+
+    .slick-next, .slick-prev {
+      width: 45px;
+      height: 35px;
+      background: rgba(0,0,0,.5);
+      bottom: 5px;
+      transform: none;
+      top: auto;
+      &:before {
+        content: '↼';
+        font-family: poppins, helvetica, arial;
+        font-size: 22px;
+      }
+    }
+    .slick-prev {
+      right: 55px;
+      left: auto;
+      z-index: 10;
+    }
+    .slick-next {
+      right: 5px;
+      &:before{
+        content: '⇀';
+        font-family: poppins, helvetica, arial;
+        font-size: 22px;
+      }
+    }
+  }
+
+  &.cards--portfolio {
+    max-width: 1140px;
+
+    .image-area{
+      @media (min-width: 767px) {
+        grid-area: image;
+      }
+    }
+    .content-area {
+      @media (min-width: 767px) {
+        grid-area: content;
+      }
+    }
+    .portfolio-grid--1 {
+      display: grid;
+      grid-template-columns: 1fr;
+      @media (min-width: 767px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "image image content";
+      }
+
+      grid-template-rows: auto;
+      grid-gap: 10px;
+      margin-top: 10px;
+
+      .cards__card {
+        max-height: 400px;
+      }
+    }
+    .portfolio-grid--2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      @media (min-width: 767px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "content image image";
+      }
+      grid-template-rows: auto;
+      grid-gap: 10px;
+      margin-top: 10px;
+      .cards__card {
+        max-height: 400px;
+      }
+    }
+
+    .portfolio-grid--3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      @media (min-width: 767px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "image1 image2 content";
+      }
+      grid-template-rows: auto;
+      grid-gap: 10px;
+      margin-top: 10px;
+      .image-area {
+        &:nth-of-type(1) {
+          @media (min-width: 767px) {
+            grid-area: image1;
+          }
+        }
+        &:nth-of-type(2) {
+          @media (min-width: 767px) {
+            grid-area: image2;
+          }
+        }
+      }
+      .cards__card {
+        max-height: 500px;
+      }
+    }
+
+    .portfolio-grid--4 {
+      display: grid;
+      grid-template-columns: 1fr;
+      @media (min-width: 767px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "content image1 image2";
+      }
+      grid-template-rows: auto;
+      grid-gap: 10px;
+      margin-top: 10px;
+      .image-area {
+        &:nth-of-type(1) {
+          @media (min-width: 767px) {
+            grid-area: image1;
+          }
+        }
+        &:nth-of-type(2) {
+          @media (min-width: 767px) {
+            grid-area: image2;
+          }
+        }
+      }
+      .cards__card {
+        max-height: 500px;
+      }
+    }
+
+    .portfolio-grid--5 {
+      display: grid;
+      grid-template-columns: 1fr;
+      @media (min-width: 767px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "image1 image1 image2";
+      }
+      grid-template-rows: auto;
+      grid-gap: 10px;
+      margin-top: 10px;
+      .image-area {
+        &:nth-of-type(1) {
+          @media (min-width: 767px) {
+            grid-area: image1;
+          }
+        }
+        &:nth-of-type(2) {
+          @media (min-width: 767px) {
+            grid-area: image2;
+          }
+        }
+      }
+      .cards__card {
+        max-height: 500px;
+      }
+    }
+
+    .cards__card {
+      position: relative;
+      width: 100%;
+      margin-bottom: 0;
+      margin-top: 0;
+      .caption {
+        position: absolute;
+        background: rgba(0,0,0,.5);
+        left: 0;
+        bottom: 0;
+        padding: 3px 20px 0;
+        color: #fff;
+        font-size: 15px;
+        letter-spacing: 1px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
 }
+
+
+
+
+
+

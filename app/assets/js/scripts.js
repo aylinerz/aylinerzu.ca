@@ -61,8 +61,23 @@
 
     // init scrollbar in about page
     if($(".js-scroll").length) {
-        const ps = new PerfectScrollbar('.js-scroll');
+        $(".js-scroll").each(function( index ) {
+            const ps = new PerfectScrollbar(this);
+        })
     }
+
+
+    // Init slider
+    if($(".slider").length) {
+        $('.slider').slick({
+            // arrows: false,
+            autoplay: true,
+            autoplaySpeed: 4000,
+
+        });
+
+    }
+
 
     if($(".js-count").length) {
         var options = {
@@ -80,7 +95,7 @@
 
 
   // Grid
-    var $grid = $('.cards').isotope({
+    var $grid = $('.cards-iso').isotope({
         itemSelector: '.cards__card',
         percentPosition: true,
         masonry: {

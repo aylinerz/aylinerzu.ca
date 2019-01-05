@@ -123,9 +123,9 @@
 }
 
 @keyframes fadeIn {
- from {
-   opacity: 0;
- }
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
   }
@@ -162,6 +162,45 @@
   }
 }
 
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+
+
+/**
+ * ----------------------------------------
+ * animation fade-in-fwd
+ * ----------------------------------------
+ */
+@keyframes fade-in-fwd {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in-fwd {
+  animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
 @keyframes flipInY {
   from {
     transform: perspective(600px) rotate3d(0, 1, 0, 90deg);
@@ -192,3 +231,4 @@
   backface-visibility: visible !important;
   animation-name: flipInY;
 }
+
