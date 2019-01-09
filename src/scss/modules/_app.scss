@@ -1,0 +1,21 @@
+.designed-by {
+
+  display: none;
+  @media (min-width: 767px) {
+    position: fixed;
+    width: auto;
+    z-index: 2222;
+    background: #fff;
+    right: 15px;
+    bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 21px;
+    mix-blend-mode: screen;
+    display: inline-block;
+  }
+  span {
+    color: #666;
+  }
+}
