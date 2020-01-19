@@ -4,7 +4,7 @@
  * https://HosseinKarami.github.io/fastshell
  * @author Hossein Karami
  * @version 1.0.5
- * Copyright 2018. MIT licensed.
+ * Copyright 2020. MIT licensed.
  */
 (function ($, window, document, undefined) {
   'use strict';
@@ -35,8 +35,14 @@
               }
           },
           getColor: function(){
-              var colors = ["YlGn", 'Greys', 'Blues', 'RdPu', 'PuBuGn', 'Purples', 'PuOr']
-                return colors[Math.floor(Math.random() * colors.length)]
+              var colors = [];
+              if ($("body").hasClass("bg-colors")) {
+                  colors = ["YlGn", 'Greys', 'Blues', 'RdPu', 'PuBuGn', 'Purples', 'PuOr']
+              }
+              else {
+                  colors = ['Greys']
+              }
+              return colors[Math.floor(Math.random() * colors.length)]
           },
           init: function () {
               var self = this;
